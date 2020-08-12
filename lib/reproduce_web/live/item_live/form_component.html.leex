@@ -7,9 +7,6 @@
   phx_submit: "save" %>
 
   <%= radio_button f, :name, "test"%><%= "Test" %>
-  <%= label f, :name %>
-  <%= text_input f, :name %>
-  <%= error_tag f, :name %>
 
   <%= submit "Save", disabled: @disabled, phx_disable_with: "Saving..." %>
 </form>

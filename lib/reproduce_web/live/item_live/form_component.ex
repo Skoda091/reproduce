@@ -15,20 +15,11 @@ defmodule ReproduceWeb.ItemLive.FormComponent do
   end
 
   @impl true
-  def handle_event("validate", %{"item" => item_params}, socket) do
-    IO.inspect("1", label: "LABEL")
-
-    changeset =
-      socket.assigns.item
-      |> Resources.change_item(item_params)
-      |> Map.put(:action, :validate)
-
-    {:noreply, assign(socket, :changeset, changeset)}
+  def handle_event("validate", %{"item" => _item_params}, socket) do
+    {:noreply, assign(socket, :disabled, false)}
   end
 
   def handle_event("validate", _params, socket) do
-    IO.inspect("2", label: "LABEL")
-
     {:noreply, assign(socket, :disabled, false)}
   end
 
